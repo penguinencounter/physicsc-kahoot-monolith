@@ -1,0 +1,5 @@
+.idea/
+.pio/
+.vscode/
+__pycache__/
+mount.sh
