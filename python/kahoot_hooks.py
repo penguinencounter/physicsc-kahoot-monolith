@@ -1,5 +1,7 @@
+# Copyright 2025, PenguinEncounter
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 import struct
-from idlelib.debugger_r import close_subprocess_debugger
 
 from kahoot.packets.server import ServerPacket
 from kahoot.packets.server.game_over import GameOverPacket
@@ -7,7 +9,6 @@ from kahoot.packets.server.game_start import GameStartPacket
 from kahoot.packets.server.question_end import QuestionEndPacket
 from kahoot.packets.server.question_ready import QuestionReadyPacket
 from kahoot.packets.server.question_start import QuestionStartPacket
-
 
 types = {
     'quiz': 0,
@@ -47,6 +48,7 @@ class GameBeginsPacket(ServerPacket):
         self.q_count = self.content['gameBlockCount']
 
 
+# on: get_ready
 class GetReadyPacket(ServerPacket):
     def __init__(self, data: dict):
         super().__init__(data)
@@ -67,6 +69,7 @@ class GetReadyPacket(ServerPacket):
         )
 
 
+# on: question_begins
 class QuestionBeginsPacket(ServerPacket):
     def __init__(self, data: dict):
         super().__init__(data)
@@ -86,6 +89,7 @@ class QuestionBeginsPacket(ServerPacket):
         )
 
 
+# on: question_ends
 class QuestionEndsPacket(ServerPacket):
     def __init__(self, data: dict):
         super().__init__(data)
@@ -100,7 +104,7 @@ class QuestionEndsPacket(ServerPacket):
         )
 
 
-# monkey patch the class so that it can't be constructed
+# Monkey-patch the provided class so that it can't be constructed
 def invalidate_packet(cls):
     __class__ = cls
 
@@ -112,7 +116,7 @@ def invalidate_packet(cls):
     cls.__init__ = new__init__
 
 
-# delete all the builtin garbage packets lmao
+# Delete all the builtin packets which are overall not good quality
 invalidate_packet(QuestionStartPacket)
 invalidate_packet(QuestionEndPacket)
 invalidate_packet(QuestionReadyPacket)

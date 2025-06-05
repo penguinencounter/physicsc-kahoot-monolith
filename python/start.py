@@ -1,3 +1,6 @@
+# Copyright 2025, PenguinEncounter
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 import asyncio
 import logging
 import struct
@@ -223,7 +226,6 @@ async def serial_thread(port: serial.Serial):
         RemoteState.QUESTION_OVER: common_refresh,
     }
 
-    is_clean = False
     rp(f'[bright_blue]baud rate = {BAUD}[/]')
     port.baudrate = BAUD
     rp('[red]attaching...[/]')
@@ -369,25 +371,6 @@ for p in ports:
 else:
     rp(rf'[bold bright_red]nothing found - check your connections?[/]')
     exit(2)
-
-
-def run_all_threaded():
-    def run_one():
-        asyncio.run(serial_thread(mainSerial))
-
-    def run_two():
-        asyncio.run(kahoot_thread())
-
-    th1 = threading.Thread(target=run_one)
-    th2 = threading.Thread(target=run_two)
-    th1.start()
-    th2.start()
-    try:
-        th1.join()
-        th2.join()
-    finally:
-        th1.join()
-        th2.join()
 
 
 async def run_all():
