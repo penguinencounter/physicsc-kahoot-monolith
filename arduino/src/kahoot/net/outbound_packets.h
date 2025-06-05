@@ -1,3 +1,6 @@
+// Copyright 2025 PenguinEncounter
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 #ifndef OUTBOUND_PACKETS_H
 #define OUTBOUND_PACKETS_H
 #include <Arduino.h>

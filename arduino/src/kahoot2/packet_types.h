@@ -1,3 +1,6 @@
+// Copyright 2025 PenguinEncounter
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 #ifndef PACKET_TYPES_H
 #define PACKET_TYPES_H
 

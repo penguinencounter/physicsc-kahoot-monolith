@@ -1,3 +1,6 @@
+// Copyright 2025 PenguinEncounter
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 #ifndef SYMBOLS_H
 #define SYMBOLS_H
 #include "stdint.h"

@@ -1,8 +1,15 @@
+// Copyright 2025 Optiboot contributors, PenguinEncounter
+// SPDX-License-Identifier: GPL-2.0-only
+
 #include "resetdbg.h"
 #include <Arduino.h>
 #include <avr/wdt.h>
 
+// This code is based on the code in the Optiboot examples repository:
 // https://github.com/Optiboot/optiboot/blob/master/optiboot/examples/demo_reset/demo_reset.ino
+// Retrieved May 26, 2025.
+// Optiboot is licensed with a variation of GPLv2, so this file specifically is also GPLv2.
+// Have a look at resetdbg_LICENSE for the license text.
 
 uint8_t resetFlag __attribute__((section(".noinit")));
 
