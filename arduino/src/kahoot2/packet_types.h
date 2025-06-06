@@ -21,11 +21,11 @@ enum InPacketType {
     _in_lut_size,
 };
 
-struct get_ready {
-    uint16_t q_num;
-    uint8_t mode;
-    uint8_t number_of_answers;
-};
+// struct get_ready {
+//     uint16_t q_num;
+//     uint8_t mode;
+//     uint8_t number_of_answers;
+// };
 
 constexpr size_t read_sizes[_in_lut_size] = {
     [IN_UNASSIGNED_0] = 0,

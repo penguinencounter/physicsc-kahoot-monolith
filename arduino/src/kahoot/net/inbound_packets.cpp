@@ -24,7 +24,7 @@ const InboundPacket *PongPacket::decode(tagged_buffer<uint8_t> * buf) {
 
 void PongPacket::act() {}
 
-const InboundPacket *decode(tagged_buffer<uint8_t> *data) {
+const InboundPacket *decode(tagged_buffer<uint8_t> *data) {L
     const uint8_t id = *data->ptr;
     data->ptr++;
     data->size--;

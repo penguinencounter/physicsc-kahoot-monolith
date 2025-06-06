@@ -4,7 +4,6 @@
 import asyncio
 import logging
 import struct
-import threading
 import time
 
 import serial
@@ -16,7 +15,7 @@ from rich import print as rp
 
 from kahoot_hooks import StatusChangedPacket, GameBeginsPacket, GetReadyPacket, QuestionBeginsPacket, QuestionEndsPacket
 
-GAME_PIN = 8727046
+GAME_PIN = 537265
 NICKNAME = "ArduinoBot"
 
 BAUD = 115200

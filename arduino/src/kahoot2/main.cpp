@@ -430,10 +430,10 @@ void loop() {
             sync_com();
             enter_not_in_game();
             break;
+        case NOT_IN_GAME:
+            break;
         case IN_LOBBY:
             in_lobby_text();
-            break;
-        case NOT_IN_GAME:
             break;
         case QUESTION_INTRO:
             question_intro();
